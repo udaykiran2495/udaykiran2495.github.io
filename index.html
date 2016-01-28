@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+	<title>My Javascript Game!</title>	
+
+	<style type="text/css">
+
+	body {
+		background-color: #d0e4fe;
+	}
+
+	</style>
+
+
+</head>
+
+<body>
+
+
+
+	<img src="car.png" id="car"
+
+    style="position:fixed;
+           left:0px;
+           top:0px;"
+
+    >
+
+
+
+
+	<script type="text/javascript">
+
+    function leftArrow() {
+
+        var left = document.getElementById("car").style.left;
+
+        left = parseInt( left , 10);
+
+        // alert(left);
+
+   
+
+        var move_left = left - 20 ;
+
+        if ( move_left >= 0 ) {
+
+               document.getElementById("car").style.left = move_left + "px";
+
+
+        };
+
+     
+
+    }
+
+    function rightArrow() {
+
+        var left = document.getElementById("car").style.left;
+
+        left = parseInt( left , 10);
+
+        // alert(left);
+
+
+        var move_right = left + 20 ;
+
+        document.getElementById("car").style.left = move_right + "px";
+
+    }
+
+     function upArrow() {
+
+        var top = document.getElementById("car").style.top;
+
+        top = parseInt( top , 10);
+
+        // alert(left);
+
+
+        var move_down = top + 20 ;
+
+        if (move_down >= 0) {
+
+            
+        document.getElementById("car").style.top = move_down + "px";
+
+
+        };
+
+
+    }
+
+    function downArrow() {
+
+        var top = document.getElementById("car").style.top;
+
+        top = parseInt( top , 10);
+
+        // alert(left);
+
+
+        var move_down = top - 20 ;
+
+        document.getElementById("car").style.top = move_down + "px";
+
+    }
+
+	document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 37:
+            leftArrow();
+            break;
+        case 38:
+            downArrow();
+            break;
+        case 39:
+            rightArrow();
+            break;
+        case 40:
+            upArrow();
+            break;
+    }
+    };
+
+
+
+	</script>
+
+
+</body>
